@@ -58,6 +58,7 @@ struct Submission_Queue_Entry
 	uint64_t PRP_entry_1;
 	uint64_t PRP_entry_2;
 	uint32_t Command_specific[6];
+	std::string process;
 };
 
 #endif // !NVME_DEFINISIONS_H

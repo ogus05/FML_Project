@@ -165,6 +165,7 @@ namespace Host_Components
 			ncq_entry->Command_specific[2] = ((uint32_t)((uint16_t)request->LBA_count)) & (uint32_t)(0x0000ffff);
 			ncq_entry->PRP_entry_1 = (DATA_MEMORY_REGION);//Dummy addresses, just to emulate data read/write access
 			ncq_entry->PRP_entry_2 = (DATA_MEMORY_REGION + 0x1000);//Dummy addresses
+			ncq_entry->process = request->process;
 		}
 
 		return ncq_entry;

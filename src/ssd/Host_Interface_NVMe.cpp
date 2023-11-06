@@ -302,6 +302,7 @@ void Request_Fetch_Unit_NVMe::Process_pcie_read_message(uint64_t address, void *
 			break;
 		case NVME_WRITE_OPCODE:
 			new_request->Type = UserRequestType::WRITE;
+			new_request->process = sqe->process;
 			new_request->Start_LBA = ((LHA_type)sqe->Command_specific[1]) << 31 | (LHA_type)sqe->Command_specific[0]; //Command Dword 10 and Command Dword 11
 			new_request->SizeInSectors = sqe->Command_specific[2] & (LHA_type)(0x0000ffff);
 			new_request->Size_in_byte = new_request->SizeInSectors * SECTOR_SIZE_IN_BYTE;

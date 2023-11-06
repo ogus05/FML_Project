@@ -24,6 +24,7 @@ namespace SSD_Components
 		sim_time_type STAT_ResponseTime;
 		std::list<NVM_Transaction*> Transaction_list;
 		unsigned int Sectors_serviced_from_cache;
+		std::string process;
 
 		unsigned int Size_in_byte;
 		unsigned int SizeInSectors;
